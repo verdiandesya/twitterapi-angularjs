@@ -1,4 +1,4 @@
-# Menarik Feed twitter dan ditampilkan dalam bentuk list
+# Aplikasi Sederhana untuk Menarik Feed Twitter dengan Twitter API
 Aplikasi sederhana menggunakan AngularJS, Node JS & Twitter API
 
 ## Installing and Running
