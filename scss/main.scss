@@ -1,0 +1,67 @@
+$babyblue: #c9e1ed;
+$padding: 50px;
+$color: #999;
+
+
+body {
+  padding: $padding;
+  background-color: $babyblue;
+}
+
+blockquote.twitter-tweet {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-size: 24px;
+	margin: 0 0 15px 0;
+	line-height: 40px;
+	color: #FFF;
+	font-weight: normal;
+}
+
+#twitter-logo {
+	display: inline-block;
+	height: 44px;
+	width: auto;
+	position: relative;
+	top: -6px;
+	margin: 0 10px 0 0;
+}
+
+.tweet-item {
+	margin-bottom: 10px;
+}
+
+.tweet-details {
+	padding-left: 15px;
+	font-size: 11px;
+	color: $color;
+}
+
+.tweet-details a {
+	color: $color;
+}
+
+#search-container {
+	margin-bottom: 20px;
+}
+
+.user-search {
+	margin-bottom: 20px;
+}
+
+.load-tweets-btn {
+	display: inline-block;
+}
+
+.twitter-logo {
+	margin-top: 2px;
+	width: auto;
+	height: 32px;
+	float: right;
+}

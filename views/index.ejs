@@ -4,13 +4,12 @@
   <meta charset="utf-8">
   <title><%= title %></title>
 
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <link rel='stylesheet' href='/stylesheets/TweetList.css' />
-	
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-resource.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-sanitize.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel='stylesheet' href='./css/main.css' />
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.7.6/angular-resource.min.js"></script>
+	<script src="https://code.angularjs.org/1.7.6/angular-sanitize.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
 	<script src="//platform.twitter.com/widgets.js"></script>
@@ -19,7 +18,7 @@
 </head>
 <body>
 
-	<!-- the root element of the view assigned to the TweetList javascript controller-->
+	<!-- elemen root dari view menugaskan controller TweetList -->
 	<div ng-controller="TweetList">
 
 		<div class="row">
@@ -31,18 +30,20 @@
 		<div id="search-container" class="row">
 			<div class="col-lg-3">
 
-				<!-- this form will trigger the getTweets function in the javascript controller on submit -->
+				<!-- Form akan men-trigger fungsi getTweets pada controller javascript controller ketika disubmit -->
 				<form class="input-group" ng-submit="getTweets()" >
-	  			<span class="input-group-addon">@</span>
+					<div class="input-group-prepend">	
+	  			 		<span class="input-group-text" id="basic-addon1">@</span>
+	  				</div>
 
-					<!-- this text input is binded to a variable in the javascript controller -->
-				  <input type="text" class="form-control" placeholder="TwitterDev" ng-model="username">
+					<!-- input teks ini diikat ke variabel di controller javascript -->
+				  	<input type="text" class="form-control" placeholder="teesIndonesia" ng-model="username">
 
-					<span class="input-group-btn">
-		        <button class="btn btn-default" type="submit">Get Tweets</button>
-		      </span>
+					<div class="input-group-append">
+		        		<button class="btn input-group-text " type="submit">Get Tweets</button>
+		      		</div>
+			  </form>
 
-				</form>
    		</div>
 		</div>
 
@@ -51,7 +52,7 @@
 
 		    	<div id="tweet-list">
 
-		    		<!-- this div will repeat for every tweet object in the array using a template-expanding directive -->
+		    		<!-- div ini akan mengulang setiap object tweet dalam array menggunakan template-expanding directive -->
 		    		<div ng-repeat="tweet in tweetsResult" class="tweet-item">
 
 		    			<!-- sanitized HTML binding -->
@@ -60,10 +61,6 @@
 							<!-- binding to Tweet source property -->
 							<div class="tweet-details">
 								Tweeted from <span ng-bind-html="tweet.source"></span>
-
-								<!-- play around with rendering different Tweet properties -->
-								<!-- <p>{{tweet.user.screen_name}}</p> -->
-								<!-- <p>{{tweet.text}}</p> -->
 							</div>
 		    		</div>
 
@@ -75,8 +72,8 @@
 		<div class="row">
 			<div class="col-lg-12">
 
-				<!-- this button will trigger the getMoreTweets function in the javascript controller -->
-		  	<button type="button" class="load-more-btn btn btn-default" ng-click="getMoreTweets()">Get More Tweets</button>
+				<!--tombol ini akan men-trigger fungsi getMoreTweets dalam controller javascript -->
+		  	<button type="button" class="btn btn-light btn-default btn-sm" ng-click="getMoreTweets()">Load More</button>
 
 	  	</div>
 	  </div>

@@ -8,14 +8,14 @@ app.controller('TweetList', function($scope, $resource, $timeout) {
     function init () {
 
       // set a default username value
-      $scope.username = "twitterdev";
+      $scope.username = "teesIndonesia";
       
       // empty tweet model
       $scope.tweetsResult = [];
 
       // initiate masonry.js
       $scope.msnry = new Masonry('#tweet-list', {
-        columnWidth: 320,
+        columnWidth: 1000,
         itemSelector: '.tweet-item',
         transitionDuration: 0,
         isFitWidth: true
@@ -56,7 +56,7 @@ app.controller('TweetList', function($scope, $resource, $timeout) {
 
         $scope.tweetsResult = $scope.tweetsResult.concat(res);
 
-        // for paging - https://dev.twitter.com/docs/working-with-timelines
+        // for paging 
         $scope.maxId = res[res.length - 1].id;
 
         // render tweets with widgets.js
